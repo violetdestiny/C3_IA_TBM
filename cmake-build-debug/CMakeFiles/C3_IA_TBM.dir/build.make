@@ -82,30 +82,30 @@ CMakeFiles/C3_IA_TBM.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/C3_IA_TBM.dir/main.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tsits\OneDrive - Dundalk Institute of Technology\Desktop\C++\C3_IA_TBM\main.cpp" -o CMakeFiles\C3_IA_TBM.dir\main.cpp.s
 
-CMakeFiles/C3_IA_TBM.dir/Bug.cpp.obj: CMakeFiles/C3_IA_TBM.dir/flags.make
-CMakeFiles/C3_IA_TBM.dir/Bug.cpp.obj: C:/Users/tsits/OneDrive\ -\ Dundalk\ Institute\ of\ Technology/Desktop/C++/C3_IA_TBM/Bug.cpp
-CMakeFiles/C3_IA_TBM.dir/Bug.cpp.obj: CMakeFiles/C3_IA_TBM.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\tsits\OneDrive - Dundalk Institute of Technology\Desktop\C++\C3_IA_TBM\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/C3_IA_TBM.dir/Bug.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/C3_IA_TBM.dir/Bug.cpp.obj -MF CMakeFiles\C3_IA_TBM.dir\Bug.cpp.obj.d -o CMakeFiles\C3_IA_TBM.dir\Bug.cpp.obj -c "C:\Users\tsits\OneDrive - Dundalk Institute of Technology\Desktop\C++\C3_IA_TBM\Bug.cpp"
+CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj: CMakeFiles/C3_IA_TBM.dir/flags.make
+CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj: C:/Users/tsits/OneDrive\ -\ Dundalk\ Institute\ of\ Technology/Desktop/C++/C3_IA_TBM/Crawler.cpp
+CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj: CMakeFiles/C3_IA_TBM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\tsits\OneDrive - Dundalk Institute of Technology\Desktop\C++\C3_IA_TBM\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj -MF CMakeFiles\C3_IA_TBM.dir\Crawler.cpp.obj.d -o CMakeFiles\C3_IA_TBM.dir\Crawler.cpp.obj -c "C:\Users\tsits\OneDrive - Dundalk Institute of Technology\Desktop\C++\C3_IA_TBM\Crawler.cpp"
 
-CMakeFiles/C3_IA_TBM.dir/Bug.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/C3_IA_TBM.dir/Bug.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tsits\OneDrive - Dundalk Institute of Technology\Desktop\C++\C3_IA_TBM\Bug.cpp" > CMakeFiles\C3_IA_TBM.dir\Bug.cpp.i
+CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\tsits\OneDrive - Dundalk Institute of Technology\Desktop\C++\C3_IA_TBM\Crawler.cpp" > CMakeFiles\C3_IA_TBM.dir\Crawler.cpp.i
 
-CMakeFiles/C3_IA_TBM.dir/Bug.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/C3_IA_TBM.dir/Bug.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tsits\OneDrive - Dundalk Institute of Technology\Desktop\C++\C3_IA_TBM\Bug.cpp" -o CMakeFiles\C3_IA_TBM.dir\Bug.cpp.s
+CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\tsits\OneDrive - Dundalk Institute of Technology\Desktop\C++\C3_IA_TBM\Crawler.cpp" -o CMakeFiles\C3_IA_TBM.dir\Crawler.cpp.s
 
 # Object files for target C3_IA_TBM
 C3_IA_TBM_OBJECTS = \
 "CMakeFiles/C3_IA_TBM.dir/main.cpp.obj" \
-"CMakeFiles/C3_IA_TBM.dir/Bug.cpp.obj"
+"CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj"
 
 # External object files for target C3_IA_TBM
 C3_IA_TBM_EXTERNAL_OBJECTS =
 
 C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/main.cpp.obj
-C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/Bug.cpp.obj
+C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj
 C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/build.make
 C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/linkLibs.rsp
 C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/objects1.rsp
