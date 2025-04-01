@@ -11,8 +11,8 @@ using namespace std;
 #include <memory> // For smart pointers
 
 class Board {
-    vector<unique_ptr<Crawler>> crawlers; // Smart pointer container
-    string directionToString(Direction dir) const;
+    std::vector<unique_ptr<Crawler>> crawlers; // Smart pointer container
+   std:: string directionToString(Direction dir) const;
 
 public:
 
@@ -20,8 +20,10 @@ public:
     void displayAllBugs() const;
     void findBug(int id) const;
 
-    // Prevent copying
+
     Board() = default;
+
+    // Prevent copying
     Board(const Board&) = delete;
     Board& operator=(const Board&) = delete;
 };

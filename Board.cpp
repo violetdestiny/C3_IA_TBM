@@ -1,39 +1,39 @@
 //
 // Created by tsits on 01/04/2025.
 //
-
 #include "Board.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
-using namespace std;
 
 void Board::initializeBoard(const std::string& filename) {
-    ifstream file(filename);
-    string line;
+    std::ifstream file(filename);
+    std::string line;
 
-    while (getline(file, line)) {
-        stringstream ss(line);
-        char type;
-        int id, x, y, dir, size;
+    while(std::getline(file, line)) {
+        std::stringstream ss(line);
+        std::vector<std::string> tokens;
+        std::string token;
 
-        ss >> type >> ws;
-        ss >> id; ss.ignore();
-        ss >> x; ss.ignore();
-        ss >> y; ss.ignore();
-        ss >> dir; ss.ignore();
-        ss >> size;
+        while(std::getline(ss, token, ',')) {
+            tokens.push_back(token);
+        }
 
-        if(type == 'C') {
-            crawlers.emplace_back( make_unique<Crawler>(
-                    id, x, y, static_cast<Direction>(dir), size
-                )
-            );
+        if(tokens.size() == 6 && tokens[0] == "C") {
+            crawlers.emplace_back(std::make_unique<Crawler>(
+                std::stoi(tokens[1]),  // ID
+                std::stoi(tokens[2]),  // X
+                std::stoi(tokens[3]),  // Y
+                static_cast<Direction>(std::stoi(tokens[4])),  // Direction
+                std::stoi(tokens[5])   // Size
+            ));
         }
     }
     file.close();
+    cerr << "Read " << crawlers.size() << " crawlers" << endl;  // degubbibg
 }
-string Board::directionToString(Direction dir) const {
+
+std::string Board::directionToString(Direction dir) const {
     switch(dir) {
         case Direction::North: return "North";
         case Direction::East: return "East";
@@ -42,11 +42,12 @@ string Board::directionToString(Direction dir) const {
         default: return "Unknown";
     }
 }
+
 void Board::displayAllBugs() const {
-    for (const auto& crawler : crawlers) {
+    for(const auto& crawler : crawlers) {
         Position pos = crawler->getPosition();
-        cout << crawler->getId() <<
-            " Crawler ("<< pos.x << "," << pos.y << ") "
+        std::cout << crawler->getId() << " Crawler ("
+                  << pos.x << "," << pos.y << ") "
                   << crawler->getSize() << " "
                   << directionToString(crawler->getDirection()) << " "
                   << (crawler->isAlive() ? "Alive" : "Dead") << "\n";
@@ -54,10 +55,10 @@ void Board::displayAllBugs() const {
 }
 
 void Board::findBug(int id) const {
-    for (const auto& crawler : crawlers) {
-        if (crawler->getId() == id) {
+    for(const auto& crawler : crawlers) {
+        if(crawler->getId() == id) {
             Position pos = crawler->getPosition();
-            cout << "Bug found: " << crawler->getId() << " Crawler ("
+            std::cout << "Bug found: " << crawler->getId() << " Crawler ("
                       << pos.x << "," << pos.y << ") "
                       << crawler->getSize() << " "
                       << directionToString(crawler->getDirection()) << " "
@@ -65,5 +66,5 @@ void Board::findBug(int id) const {
             return;
         }
     }
-    cout << "Bug " << id << " not found.\n";
+    std::cout << "Bug " << id << " not found.\n";
 }
