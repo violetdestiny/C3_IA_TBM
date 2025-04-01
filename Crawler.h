@@ -18,7 +18,7 @@ class Crawler {
     int size;
     bool alive;
     list<Position> path;  // logging the bugs travels
-    int killedBy;
+    int killedBy{};
 
 public:
     Crawler(int id, int x, int y, Direction dir, int size);
@@ -27,7 +27,7 @@ public:
     void move();
     bool isWayBlocked() const;
 
-    //bug info
+    //getters
     int getId() const { return id; }
     Position getPosition() const { return position; }
     Direction getDirection() const { return direction; }
@@ -36,15 +36,12 @@ public:
     const list<Position>& getPath() const { return path; }
     int getKilledBy() const { return killedBy; }
 
-    //bug status
+    //setters
     void setAlive(bool a) { alive = a; }
     void setDirection(Direction dir) { direction = dir; }
     void setSize(int s) { size = s; }
     void setKilledBy(int kb) { killedBy = kb; }
 };
-
-
-
 
 
 #endif //CRAWLER_H

@@ -128,6 +128,30 @@ C3_IA_TBM/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/build
 .PHONY : C3_IA_TBM/fast
 
+Board.obj: Board.cpp.obj
+.PHONY : Board.obj
+
+# target to build an object file
+Board.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj
+.PHONY : Board.cpp.obj
+
+Board.i: Board.cpp.i
+.PHONY : Board.i
+
+# target to preprocess a source file
+Board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/Board.cpp.i
+.PHONY : Board.cpp.i
+
+Board.s: Board.cpp.s
+.PHONY : Board.s
+
+# target to generate assembly for a file
+Board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/Board.cpp.s
+.PHONY : Board.cpp.s
+
 Crawler.obj: Crawler.cpp.obj
 .PHONY : Crawler.obj
 
@@ -185,6 +209,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... C3_IA_TBM
+	@echo ... Board.obj
+	@echo ... Board.i
+	@echo ... Board.s
 	@echo ... Crawler.obj
 	@echo ... Crawler.i
 	@echo ... Crawler.s

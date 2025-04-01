@@ -7,4 +7,6 @@ add_executable(C3_IA_TBM main.cpp
         Position.h
         Direction.h
         Crawler.cpp
-        Crawler.h)
+        Crawler.h
+        Board.cpp
+        Board.h)

@@ -1,25 +1,42 @@
+#include "Board.h"
 #include <iostream>
+using namespace std;
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the
-    // <b>lang</b> variable name to see how CLion can help you rename it.
-    auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
+    Board board;
+    int choice;
 
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code.
-        // We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/>
-        // breakpoint for you, but you can always add more by pressing
-        // <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
-    }
+    do {
+        cout << "\nBug Simulation Menu:\n"
+                  << "1. Initialize Board\n"
+                  << "2. Display All Bugs\n"
+                  << "3. Find Bug\n"
+                  << "4. Exit\n"
+                  << "Enter choice: ";
+        cin >> choice;
+
+        switch(choice) {
+            case 1:
+                board.initializeBoard("crawler-bugs.txt");
+            cout << "Board initialized!\n";
+            break;
+            case 2:
+                board.displayAllBugs();
+            break;
+            case 3: {
+                int id;
+                cout << "Enter bug ID: ";
+                cin >> id;
+                board.findBug(id);
+                break;
+            }
+            case 4:
+                cout << "Exiting...\n";
+            break;
+            default:
+                cout << "Invalid choice!\n";
+        }
+    } while(choice != 4);
 
     return 0;
 }
-
-// TIP See CLion help at <a
-// href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>.
-//  Also, you can try interactive lessons for CLion by selecting
-//  'Help | Learn IDE Features' from the main menu.

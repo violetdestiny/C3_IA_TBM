@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "C3_IA_TBM.exe"
   "C3_IA_TBM.exe.manifest"
   "C3_IA_TBM.pdb"
+  "CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj"
+  "CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj.d"
   "CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj"
   "CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj.d"
   "CMakeFiles/C3_IA_TBM.dir/main.cpp.obj"
