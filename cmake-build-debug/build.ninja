@@ -57,6 +57,22 @@ build CMakeFiles/C3_IA_TBM.dir/main.cpp.o: CXX_COMPILER__C3_IA_TBM_unscanned_Deb
   TARGET_COMPILE_PDB = CMakeFiles/C3_IA_TBM.dir/
   TARGET_PDB = C3_IA_TBM.pdb
 
+build CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.o: CXX_COMPILER__C3_IA_TBM_unscanned_Debug /Users/ikramabbas/CLionProjects/C3_IA_TBM/Crawler.cpp || cmake_object_order_depends_target_C3_IA_TBM
+  DEP_FILE = CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/C3_IA_TBM.dir
+  OBJECT_FILE_DIR = CMakeFiles/C3_IA_TBM.dir
+  TARGET_COMPILE_PDB = CMakeFiles/C3_IA_TBM.dir/
+  TARGET_PDB = C3_IA_TBM.pdb
+
+build CMakeFiles/C3_IA_TBM.dir/Board.cpp.o: CXX_COMPILER__C3_IA_TBM_unscanned_Debug /Users/ikramabbas/CLionProjects/C3_IA_TBM/Board.cpp || cmake_object_order_depends_target_C3_IA_TBM
+  DEP_FILE = CMakeFiles/C3_IA_TBM.dir/Board.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/C3_IA_TBM.dir
+  OBJECT_FILE_DIR = CMakeFiles/C3_IA_TBM.dir
+  TARGET_COMPILE_PDB = CMakeFiles/C3_IA_TBM.dir/
+  TARGET_PDB = C3_IA_TBM.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target C3_IA_TBM
@@ -65,7 +81,7 @@ build CMakeFiles/C3_IA_TBM.dir/main.cpp.o: CXX_COMPILER__C3_IA_TBM_unscanned_Deb
 #############################################
 # Link the executable C3_IA_TBM
 
-build C3_IA_TBM: CXX_EXECUTABLE_LINKER__C3_IA_TBM_Debug CMakeFiles/C3_IA_TBM.dir/main.cpp.o
+build C3_IA_TBM: CXX_EXECUTABLE_LINKER__C3_IA_TBM_Debug CMakeFiles/C3_IA_TBM.dir/main.cpp.o CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.o CMakeFiles/C3_IA_TBM.dir/Board.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
   OBJECT_DIR = CMakeFiles/C3_IA_TBM.dir
   POST_BUILD = :
