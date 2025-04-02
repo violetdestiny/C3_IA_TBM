@@ -1,7 +1,3 @@
-//
-// Created by tsits on 01/04/2025.
-//
-
 #include "Crawler.h"
 #include <cstdlib> // for the rand
 using namespace std;

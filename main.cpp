@@ -1,21 +1,29 @@
 #include "Board.h"
 #include <iostream>
+#include <fstream>
+#include <chrono>
+#include <thread>
 using namespace std;
-
+bool initia = false;
 int main() {
     Board board;
     int choice;
 
     do {
         cout << "\nBug Simulation Menu:\n"
-                  << "1. Initialize Board\n"
-                  << "2. Display All Bugs\n"
-                  << "3. Find Bug\n"
-                  << "4. Exit\n"
-                  << "Enter choice: ";
+             << "1. Initialize Board\n"
+             << "2. Display All Bugs\n"
+             << "3. Find Bug\n"
+             << "4. Tap the Bug Board\n"
+             << "5. Display Life History of all Bugs\n"
+             << "6. Display all Cells listing their Bugs\n"
+             << "7. Run simulation \n"
+             << "8. Exit \n"
+             << "Enter choice: ";
         cin >> choice;
 
         switch(choice) {
+
             case 1:
                 board.initializeBoard("crawler-bugs.txt");
             cout << "Board initialized!\n";
@@ -31,12 +39,30 @@ int main() {
                 break;
             }
             case 4:
-                cout << "Exiting...\n";
+                board.tapBoard();
             break;
+            case 5:
+                board.displayLifeHistory();
+            break;
+            case 6:
+                board.displayAllCells();
+            break;
+            case 7: {
+                int taps;
+                cout << "Enter number of taps: ";
+                cin >> taps;
+                board.runSimulation(taps);
+                break;
+            }
+            /*case 8:
+                board.writeLifeHistoryToFile("bugs_life_history.out");
+            cout << "Exiting...\n";
+            break;
+            */
             default:
                 cout << "Invalid choice!\n";
         }
-    } while(choice != 4);
+    } while(choice != 8);
 
     return 0;
 }
