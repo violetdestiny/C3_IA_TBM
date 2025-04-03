@@ -54,11 +54,11 @@ int main() {
                 board.runSimulation(taps);
                 break;
             }
-            /*case 8:
+           case 8:
                 board.writeLifeHistoryToFile("bugs_life_history.out");
             cout << "Exiting...\n";
             break;
-            */
+
             default:
                 cout << "Invalid choice!\n";
         }

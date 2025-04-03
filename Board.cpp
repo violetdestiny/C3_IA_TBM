@@ -157,10 +157,12 @@ void Board::runSimulation(int taps) {
        this_thread::sleep_for(chrono::milliseconds(100));
     }
 }
-/*
-void Board::writeLifeHistoryToFile(const std::string& filename) const {
+void Board::writeLifeHistoryToFile(const string& filename) const {
     ofstream outFile(filename);
-
+    if(!outFile) {
+       cerr << "Error opening file for writing!\n";
+        return;
+    }
 
     for(const auto& crawler : crawlers) {
         outFile << crawler->getId() << " Crawler Path: ";
@@ -170,6 +172,12 @@ void Board::writeLifeHistoryToFile(const std::string& filename) const {
                 outFile << ",";
             }
         }
+        if(!crawler->isAlive()) {
+            outFile << " Eaten by " << crawler->getKilledBy();
+        }
+        outFile << "\n";
+    }
 
+    outFile.close();
+    cout << "Life history written to " << filename << "\n";
 }
-*/
