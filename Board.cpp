@@ -6,6 +6,11 @@
 #include <thread>
    using namespace std;
 void Board::initializeBoard(const string& filename) {
+    if(initialized) {
+        cout << "Board already initialized!\n";
+        return;
+    }
+
     ifstream file(filename);
     string line;
 
@@ -30,6 +35,7 @@ void Board::initializeBoard(const string& filename) {
     }
     file.close();
    // cerr << "Read " << crawlers.size() << " crawlers" << endl;  // degubbibg
+    initialized = true;
 }
 
 string Board::directionToString(Direction dir) const {
@@ -43,6 +49,10 @@ string Board::directionToString(Direction dir) const {
 }
 
 void Board::displayAllBugs() const {
+    if(!initialized) {
+        cout << "Error: Board not initialized!\n";
+        return;
+    }
     for(const auto& crawler : crawlers) {
         Position pos = crawler->getPosition();
       cout << crawler->getId() << " Crawler ("
@@ -54,6 +64,10 @@ void Board::displayAllBugs() const {
 }
 
 void Board::findBug(int id) const {
+    if(!initialized) {
+        cout << "Error: Board not initialized!\n";
+        return;
+    }
     for(const auto& crawler : crawlers) {
         if(crawler->getId() == id) {
             Position pos = crawler->getPosition();
@@ -75,6 +89,8 @@ void Board::tapBoard() {
         }
     }
     handleFights();
+
+    cout<< "Board Tapped!"<<endl;
 }
 
 void Board::handleFights() {

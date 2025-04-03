@@ -1,3 +1,0 @@
-/Users/ikramabbas/CLionProjects/C3_IA_TBM/cmake-build-debug/CMakeFiles/C3_IA_TBM.dir
-/Users/ikramabbas/CLionProjects/C3_IA_TBM/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/ikramabbas/CLionProjects/C3_IA_TBM/cmake-build-debug/CMakeFiles/rebuild_cache.dir

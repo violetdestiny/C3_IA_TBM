@@ -4,7 +4,6 @@
 #include <chrono>
 #include <thread>
 using namespace std;
-bool initia = false;
 int main() {
     Board board;
     int choice;
@@ -32,6 +31,10 @@ int main() {
                 board.displayAllBugs();
             break;
             case 3: {
+                if(!board.isInitialized()) {
+                    cout << "Error: Initialize board first!\n";
+                    break;
+                }
                 int id;
                 cout << "Enter bug ID: ";
                 cin >> id;
@@ -39,15 +42,27 @@ int main() {
                 break;
             }
             case 4:
+                if(!board.isInitialized()) {
+                    cout << "Error: Initialize board first!\n";
+                    break;
+                }
                 board.tapBoard();
             break;
             case 5:
+                if(!board.isInitialized()) {
+                    cout << "Error: Initialize board first!\n";
+                    break;
+                }
                 board.displayLifeHistory();
             break;
             case 6:
                 board.displayAllCells();
             break;
             case 7: {
+                if(!board.isInitialized()) {
+                    cout << "Error: Initialize board first!\n";
+                    break;
+                }
                 int taps;
                 cout << "Enter number of taps: ";
                 cin >> taps;
@@ -55,8 +70,9 @@ int main() {
                 break;
             }
            case 8:
-                board.writeLifeHistoryToFile("bugs_life_history.out");
-            cout << "Exiting...\n";
+               if(board.isInitialized()) {
+                   board.writeLifeHistoryToFile("bugs_life_history.out");
+               }            cout << "Exiting...\n";
             break;
 
             default:

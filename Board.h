@@ -9,7 +9,8 @@
 
 class Board {
     std::vector<std::unique_ptr<Crawler>> crawlers;// Smart pointer container
-    
+    bool initialized = false; // Track status
+
     std::string directionToString(Direction dir) const;
     void handleFights();
 
@@ -22,6 +23,7 @@ public:
      void displayAllCells() const;
      void runSimulation(int taps);
     void writeLifeHistoryToFile(const std::string& filename) const;
+    bool isInitialized() const { return initialized; }
 
     Board() = default;
     // Prevent copying
