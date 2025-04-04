@@ -89,8 +89,6 @@ void Board::tapBoard() {
         }
     }
     handleFights();
-
-    cout<< "Board Tapped!"<<endl;
 }
 
 void Board::handleFights() {

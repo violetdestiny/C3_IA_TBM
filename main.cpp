@@ -47,6 +47,7 @@ int main() {
                     break;
                 }
                 board.tapBoard();
+            cout << "Board tapped!\n";
             break;
             case 5:
                 if(!board.isInitialized()) {
@@ -66,7 +67,14 @@ int main() {
                 int taps;
                 cout << "Enter number of taps: ";
                 cin >> taps;
+                cout << "Tapping....\n";
+
                 board.runSimulation(taps);
+                if (taps == 1) {
+                    cout << "Board taped once!\n";
+                }
+                else
+                    cout << "Board taped "<<taps<< " times\n";
                 break;
             }
            case 8:
