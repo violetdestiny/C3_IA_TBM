@@ -28,8 +28,6 @@ Key Features:
 1. Clone repository:
    ```bash
    git clone https://github.com/yourusername/bugs-life-simulation.git
-   g++ -std=c++17 *.cpp -o bugs_simulation
-   ./bugs_simulation
    
 2. Compile with C++17 support:
 `g++ -std=c++17 *.cpp -o bugs_simulation`
@@ -48,3 +46,4 @@ Key Features:
 7. Run Simulation
 8. Exit
 
+（づ￣3￣）づ╭❤️～
