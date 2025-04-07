@@ -2,11 +2,6 @@
 #include <cstdlib> // for the rand
 using namespace std;
 
-Crawler::Crawler(int id, int x, int y, Direction dir, int size)
-    : id(id), position(x, y), direction(dir), size(size), alive(true), killedBy(-1) {
-    path.push_back(position); // Add initial position to path
-}
-
 void Crawler::move() {
     if (!alive) return;
 
@@ -16,6 +11,7 @@ void Crawler::move() {
     }
 
     // Update position based on direction
+    Position pos = getPosition();
     switch(direction) {
         case Direction::North: position.y--; break;
         case Direction::East: position.x++; break;
@@ -23,15 +19,10 @@ void Crawler::move() {
         case Direction::West: position.x--; break;
     }
 
-    path.push_back(position);
-}
+    // Ensure we stay within bounds (defensive programming)
+    pos.x = max(0, min(9, pos.x));
+    pos.y = max(0, min(9, pos.y));
 
-bool Crawler::isWayBlocked() const {
-    switch(direction) {
-        case Direction::North: return position.y == 0;
-        case Direction::East: return position.x == 9;
-        case Direction::South: return position.y == 9;
-        case Direction::West: return position.x == 0;
-        default: return false;
-    }
+    setPosition(pos); // Update position through base class}
+
 }

@@ -10,6 +10,12 @@ enum class Direction {
     North = 1,  // Up
     East = 2,   // Right
     South = 3,  // Down
-    West = 4    // Left
+    West = 4 ,   // Left
+
+    //Extras for the diagonal movement for the CRissCross Bug
+    NorthEast = 5,
+   SouthEast = 6,
+   SouthWest = 7,
+   NorthWest = 8
 };
 #endif //DIRECTION_H

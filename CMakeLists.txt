@@ -9,4 +9,9 @@ add_executable(C3_IA_TBM main.cpp
         Crawler.cpp
         Crawler.h
         Board.cpp
-        Board.h)
+        Board.h
+        Bug.h
+        Hopper.cpp
+        Hopper.h
+        CrissCross.cpp
+        CrissCross.h)

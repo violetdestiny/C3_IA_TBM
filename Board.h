@@ -1,14 +1,16 @@
 #ifndef BOARD_H
 #define BOARD_H
 
+#include "Bug.h"
+#include "Hopper.h"
+#include "CrissCross.h"
 #include "Crawler.h"
 #include <vector>
 #include <memory> // for Smart pointers
-#include <map>
 #include <string>
 
 class Board {
-    std::vector<std::unique_ptr<Crawler>> crawlers;// Smart pointer container
+    std::vector<std::unique_ptr<Bug>> bugs; // stores all bug types
     bool initialized = false; // Track status
 
     std::string directionToString(Direction dir) const;

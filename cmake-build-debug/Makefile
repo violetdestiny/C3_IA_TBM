@@ -176,6 +176,54 @@ Crawler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.s
 .PHONY : Crawler.cpp.s
 
+CrissCross.obj: CrissCross.cpp.obj
+.PHONY : CrissCross.obj
+
+# target to build an object file
+CrissCross.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj
+.PHONY : CrissCross.cpp.obj
+
+CrissCross.i: CrissCross.cpp.i
+.PHONY : CrissCross.i
+
+# target to preprocess a source file
+CrissCross.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.i
+.PHONY : CrissCross.cpp.i
+
+CrissCross.s: CrissCross.cpp.s
+.PHONY : CrissCross.s
+
+# target to generate assembly for a file
+CrissCross.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.s
+.PHONY : CrissCross.cpp.s
+
+Hopper.obj: Hopper.cpp.obj
+.PHONY : Hopper.obj
+
+# target to build an object file
+Hopper.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj
+.PHONY : Hopper.cpp.obj
+
+Hopper.i: Hopper.cpp.i
+.PHONY : Hopper.i
+
+# target to preprocess a source file
+Hopper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.i
+.PHONY : Hopper.cpp.i
+
+Hopper.s: Hopper.cpp.s
+.PHONY : Hopper.s
+
+# target to generate assembly for a file
+Hopper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.s
+.PHONY : Hopper.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -215,6 +263,12 @@ help:
 	@echo ... Crawler.obj
 	@echo ... Crawler.i
 	@echo ... Crawler.s
+	@echo ... CrissCross.obj
+	@echo ... CrissCross.i
+	@echo ... CrissCross.s
+	@echo ... Hopper.obj
+	@echo ... Hopper.i
+	@echo ... Hopper.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
