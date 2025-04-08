@@ -348,7 +348,7 @@ pair<int, vector<BugResult>> Board::runBattleRoyale() {
         // Check time limit (10 seconds)
         auto currentTime = chrono::steady_clock::now();
         auto elapsed = chrono::duration_cast<chrono::seconds>(currentTime - startTime);
-        if (elapsed.count() >= 10) {
+        if (elapsed.count() >= 1) {
             timeLimitReached = true;
         }
     }

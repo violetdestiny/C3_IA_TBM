@@ -82,8 +82,7 @@ int main() {
                     cout << "Error: Initialize board first!\n";
                     break;
                 }
-                cout << "Running Battle Royale (10 second limit) ...\n\n";
-                cout<< "!!!!!To maintain CONFIDENTIALITY of the bug champions, their history shall not be disclosed!!!!!\n What happens at bug arena stays at bug arena ;)"<<endl;
+                cout << "Running Battle Royale ...\n\n";
                 auto [taps, winners] = board.runBattleRoyale();
 
                 cout << "\n=== BATTLE RESULTS ===\n";
