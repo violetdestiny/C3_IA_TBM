@@ -8,6 +8,8 @@
 #include "Position.h"
 #include "Direction.h"
 #include <list>
+#include <array>
+#include <stdlib.h>
 
 class Bug {
 protected:
@@ -47,12 +49,12 @@ public:
     }
 
     //Still thinking. for random direction
-    // Direction getRandomDirection() {
-    //     static const array<Direction, 4> directions = {
-    //         Direction::North, Direction::East, Direction::South, Direction::West
-    //     };
-    //     return directions[rand() % directions.size()];
-    // }
+    Direction getRandomDirection() {
+        static const std::array<Direction, 4> directions = {
+            Direction::North, Direction::East, Direction::South, Direction::West
+        };
+        return directions[rand() % directions.size()];
+    }
 
     int getId() const { return id; }
     Position getPosition() const { return position; }
