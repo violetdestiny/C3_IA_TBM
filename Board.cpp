@@ -109,17 +109,6 @@ void Board::findBug(int id) const {
         if(bug->getId() == id) {
             Position pos = bug->getPosition();
             cout << "Bug found: " << bug->getId() << " ";
-
-            if(dynamic_cast<Crawler*>(bug.get())) {
-                cout << "Crawler ";
-            }
-            else if(dynamic_cast<Hopper*>(bug.get())) {
-                cout << "Hopper ";
-            }
-            else if(dynamic_cast<CrissCross*>(bug.get())) {
-                cout << "CrissCross ";
-            }
-
             cout << "(" << pos.x << "," << pos.y << ") "
                  << bug->getSize() << " "
                  << directionToString(bug->getDirection()) << " "
@@ -142,7 +131,6 @@ void Board::tapBoard() {
 void Board::handleFights() {
     map<pair<int, int>, vector<Bug*>> cellMap;
 
-    // Group bugs by their positions
     for(auto& bug : bugs) {
         if(bug->isAlive()) {
             Position pos = bug->getPosition();
@@ -150,7 +138,6 @@ void Board::handleFights() {
         }
     }
 
-    // For each cell with multiple bugs, determine winner
     for(auto& [pos, bugsInCell] : cellMap) {
         if(bugsInCell.size() > 1) {
             Bug* winner = bugsInCell[0];
@@ -168,12 +155,16 @@ void Board::handleFights() {
                     bug->setAlive(false);
                     bug->setKilledBy(winner->getId());
                     winner->setSize(winner->getSize() + bug->getSize());
+
+                    // Debugging
+                    // cout << "Bug " << bug->getId() << " was eaten by "
+                    //      << winner->getId() << " at (" << pos.first
+                    //      << "," << pos.second << ")\n";
                 }
             }
         }
     }
 }
-
 void Board::displayLifeHistory() const {
     for(const auto& bug : bugs) {
         cout << bug->getId() << " ";
@@ -328,4 +319,77 @@ void Board::writeLifeHistoryToFile(const string& filename) const {
 
     outFile.close();
     cout << "Life history written to " << filename << "\n";
+}
+
+pair<int, vector<BugResult>> Board::runBattleRoyale() {
+    int taps = 0;
+    map<int, int> killCount; // Tracks how many bugs each bug has killed
+
+    //so we arent waiting too long for the battle to end
+    const auto startTime = chrono::steady_clock::now();
+    bool timeLimitReached = false;
+
+    // Initialize kill counts
+    for (const auto& bug : bugs) {
+        killCount[bug->getId()] = 0;
+    }
+
+    // Battle until only one bug remains
+    while (countAliveBugs() > 1 && !timeLimitReached) {
+        tapBoard();
+        taps++;
+
+        // Update kill counts for this round
+        for (const auto& bug : bugs) {
+            if (!bug->isAlive() && bug->getKilledBy() != -1) {
+                killCount[bug->getKilledBy()]++;
+            }
+        }
+        // Check time limit (10 seconds)
+        auto currentTime = chrono::steady_clock::now();
+        auto elapsed = chrono::duration_cast<chrono::seconds>(currentTime - startTime);
+        if (elapsed.count() >= 10) {
+            timeLimitReached = true;
+        }
+    }
+
+    vector<BugResult> results;
+    vector<BugResult> allBugs;
+
+    // Get all bugs sorted by kills then size
+    for (const auto& bug : bugs) {
+        allBugs.push_back({
+            bug->getId(),
+            getBugType(bug.get()),
+            bug->getSize(),
+            killCount[bug->getId()]
+        });
+    }
+
+    // Sort by kills then size
+    sort(allBugs.begin(), allBugs.end(), [](const BugResult& a, const BugResult& b) {
+        if (a.kills == b.kills) return a.size > b.size;
+        return a.kills > b.kills;
+    });
+
+     // Get top 3 bugs
+    for (int i = 0; i < min(3, (int)allBugs.size()); i++) {
+        results.push_back(allBugs[i]);
+    }
+
+    return {taps, results};
+}
+
+//useful for above implementation
+int Board::countAliveBugs() const {
+    return count_if(bugs.begin(), bugs.end(), [](const unique_ptr<Bug>& bug) {
+        return bug->isAlive();
+    });
+}
+
+string Board::getBugType(Bug* bug) const {
+    if(dynamic_cast<Crawler*>(bug)) return "Crawler";
+    if(dynamic_cast<Hopper*>(bug)) return "Hopper";
+    if(dynamic_cast<CrissCross*>(bug)) return "CrissCross";
+    return "Unknown";
 }
