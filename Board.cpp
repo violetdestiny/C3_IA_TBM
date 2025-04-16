@@ -1,12 +1,10 @@
+
 #include "Board.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include <chrono>
-#include <thread>
 #include <map>
-   using namespace std;
-
+using namespace std;
 void Board::initializeBoard(const std::string& filename) {
     if(initialized) {
         cout << "Board already initialized!\n";
@@ -21,7 +19,6 @@ void Board::initializeBoard(const std::string& filename) {
         vector<string> tokens;
         string token;
 
-        // Split line by commas
         while(getline(ss, token, ',')) {
             tokens.push_back(token);
         }
@@ -33,17 +30,13 @@ void Board::initializeBoard(const std::string& filename) {
             Direction dir = static_cast<Direction>(stoi(tokens[4]));
             int size = stoi(tokens[5]);
 
-            // Create appropriate bug type
-            //if its a crawler "C"
             if(tokens[0] == "C") {
                 bugs.emplace_back(make_unique<Crawler>(id, x, y, dir, size));
             }
-            //if its a hopper "H"
             else if(tokens[0] == "H" && tokens.size() == 7) {
                 int hopLength = stoi(tokens[6]);
                 bugs.emplace_back(make_unique<Hopper>(id, x, y, dir, size, hopLength));
             }
-            // if its a crissC=cross "X"
             else if(tokens[0] == "X" && tokens.size() == 7) {
                 Direction dir1 = static_cast<Direction>(stoi(tokens[4]));
                 Direction dir2 = static_cast<Direction>(stoi(tokens[6]));
@@ -55,8 +48,7 @@ void Board::initializeBoard(const std::string& filename) {
     initialized = true;
 }
 
-// Helper to convert direction enum to string
-string Board::directionToString(Direction dir) const {
+static string directionToString(Direction dir) {
     switch(dir) {
         case Direction::North: return "North";
         case Direction::East: return "East";
@@ -70,7 +62,6 @@ string Board::directionToString(Direction dir) const {
     }
 }
 
-// Show all bugs with their current status
 void Board::displayAllBugs() const {
     if(!initialized) {
         cout << "Error: Board not initialized!\n";
@@ -80,7 +71,6 @@ void Board::displayAllBugs() const {
         Position pos = bug->getPosition();
         cout << bug->getId() << " ";
 
-        // Show bug type
         if(dynamic_cast<Crawler*>(bug.get())) {
             cout << "Crawler ";
         }
@@ -96,7 +86,6 @@ void Board::displayAllBugs() const {
              << directionToString(bug->getDirection()) << " "
              << (bug->isAlive() ? "Alive" : "Dead") << "\n";
     }
-
 }
 
 void Board::findBug(int id) const {
@@ -141,30 +130,22 @@ void Board::handleFights() {
     for(auto& [pos, bugsInCell] : cellMap) {
         if(bugsInCell.size() > 1) {
             Bug* winner = bugsInCell[0];
-
-            // Find biggest bug
             for(auto bug : bugsInCell) {
                 if(bug->getSize() > winner->getSize()) {
                     winner = bug;
                 }
             }
-
-            // Kill losers and grow winner
             for(auto bug : bugsInCell) {
                 if(bug != winner) {
                     bug->setAlive(false);
                     bug->setKilledBy(winner->getId());
                     winner->setSize(winner->getSize() + bug->getSize());
-
-                    // Debugging
-                    // cout << "Bug " << bug->getId() << " was eaten by "
-                    //      << winner->getId() << " at (" << pos.first
-                    //      << "," << pos.second << ")\n";
                 }
             }
         }
     }
 }
+
 void Board::displayLifeHistory() const {
     for(const auto& bug : bugs) {
         cout << bug->getId() << " ";
@@ -180,7 +161,6 @@ void Board::displayLifeHistory() const {
         }
 
         cout << "Path: ";
-
         for(const auto& pos : bug->getPath()) {
             cout << "(" << pos.x << "," << pos.y << ")";
             if(&pos != &bug->getPath().back()) {
@@ -195,18 +175,13 @@ void Board::displayLifeHistory() const {
     }
 }
 
-// Display the board grid with bugs
 void Board::displayAllCells() const {
-    // Map to store bugs in each cell
     map<pair<int, int>, vector<string>> cellMap;
 
-    // Collect all alive bugs and their positions
     for(const auto& bug : bugs) {
         if(bug->isAlive()) {
             Position pos = bug->getPosition();
             string bugInfo = to_string(bug->getId());
-
-            // Add bug type indicator
             if(dynamic_cast<Crawler*>(bug.get())) {
                 bugInfo += "C";
             }
@@ -216,53 +191,41 @@ void Board::displayAllCells() const {
             else if(dynamic_cast<CrissCross*>(bug.get())) {
                 bugInfo += "X";
             }
-
             cellMap[{pos.x, pos.y}].push_back(bugInfo);
         }
     }
 
-    // Print column headers (x coordinates)
-    cout << "     ";  // Space for row headers
+    cout << "     ";
     for(int x = 0; x < 10; x++) {
         cout << "  " << x << "   ";
     }
     cout << "\n";
 
-    // Print top border
     cout << "    +";
     for(int x = 0; x < 10; x++) {
         cout << "-----+";
     }
     cout << "\n";
 
-    // Print each row
     for(int y = 0; y < 10; y++) {
-        // Row header (y coordinate)
         cout << " " << y << " |";
-
-        // Cell contents
         for(int x = 0; x < 10; x++) {
             if(cellMap.count({x, y})) {
-                // If multiple bugs in cell, show count
                 if(cellMap[{x, y}].size() > 1) {
                     cout << " " << cellMap[{x, y}].size() << "x |";
                 }
-                // Single bug - show ID and type
                 else {
                     string bug = cellMap[{x, y}][0];
-                    // Right-align single-digit IDs
                     if(bug.length() == 2) cout << " ";
                     cout << bug << " |";
                 }
             }
-            // Empty cell
             else {
                 cout << "     |";
             }
         }
         cout << "\n";
 
-        // Row border
         cout << "    +";
         for(int x = 0; x < 10; x++) {
             cout << "-----+";
@@ -270,16 +233,15 @@ void Board::displayAllCells() const {
         cout << "\n";
     }
 
-    // Legend
     cout << "\nLegend:\n";
     cout << "  C = Crawler, H = Hopper, X = CrissCross\n";
-    cout << "  #x = multiple bugs in cell (use Display All Bugs for details)\n";
+    cout << "  #x = multiple bugs in cell\n";
 }
-// https://stackoverflow.com/questions/21521282/basic-timer-with-stdthread-and-stdchrono
+
 void Board::runSimulation(int taps) {
     for(int i = 0; i < taps; i++) {
         tapBoard();
-       this_thread::sleep_for(chrono::milliseconds(100));
+        this_thread::sleep_for(chrono::milliseconds(100));
     }
 }
 
@@ -323,29 +285,25 @@ void Board::writeLifeHistoryToFile(const string& filename) const {
 
 pair<int, vector<BugResult>> Board::runBattleRoyale() {
     int taps = 0;
-    map<int, int> killCount; // Tracks how many bugs each bug has killed
+    map<int, int> killCount;
 
-    //so we arent waiting too long for the battle to end
     const auto startTime = chrono::steady_clock::now();
     bool timeLimitReached = false;
 
-    // Initialize kill counts
     for (const auto& bug : bugs) {
         killCount[bug->getId()] = 0;
     }
 
-    // Battle until only one bug remains
     while (countAliveBugs() > 1 && !timeLimitReached) {
         tapBoard();
         taps++;
 
-        // Update kill counts for this round
         for (const auto& bug : bugs) {
             if (!bug->isAlive() && bug->getKilledBy() != -1) {
                 killCount[bug->getKilledBy()]++;
             }
         }
-        // Check time limit (10 seconds)
+
         auto currentTime = chrono::steady_clock::now();
         auto elapsed = chrono::duration_cast<chrono::seconds>(currentTime - startTime);
         if (elapsed.count() >= 1) {
@@ -356,7 +314,6 @@ pair<int, vector<BugResult>> Board::runBattleRoyale() {
     vector<BugResult> results;
     vector<BugResult> allBugs;
 
-    // Get all bugs sorted by kills then size
     for (const auto& bug : bugs) {
         allBugs.push_back({
             bug->getId(),
@@ -366,13 +323,11 @@ pair<int, vector<BugResult>> Board::runBattleRoyale() {
         });
     }
 
-    // Sort by kills then size
     sort(allBugs.begin(), allBugs.end(), [](const BugResult& a, const BugResult& b) {
         if (a.kills == b.kills) return a.size > b.size;
         return a.kills > b.kills;
     });
 
-     // Get top 3 bugs
     for (int i = 0; i < min(3, (int)allBugs.size()); i++) {
         results.push_back(allBugs[i]);
     }
@@ -380,7 +335,6 @@ pair<int, vector<BugResult>> Board::runBattleRoyale() {
     return {taps, results};
 }
 
-//useful for above implementation
 int Board::countAliveBugs() const {
     return count_if(bugs.begin(), bugs.end(), [](const unique_ptr<Bug>& bug) {
         return bug->isAlive();
@@ -392,4 +346,93 @@ string Board::getBugType(Bug* bug) const {
     if(dynamic_cast<Hopper*>(bug)) return "Hopper";
     if(dynamic_cast<CrissCross*>(bug)) return "CrissCross";
     return "Unknown";
+}
+
+void Board::draw(sf::RenderWindow& window) const {
+    static sf::Font font;
+    static bool fontLoaded = false;
+    if (!fontLoaded) {
+        if (!font.loadFromFile("arial.ttf")) {
+            return;
+        }
+        fontLoaded = true;
+    }
+
+    drawGrid(window, font);
+    drawBugs(window, font);
+}
+
+void Board::drawGrid(sf::RenderWindow& window, const sf::Font& font) const {
+    sf::RectangleShape line(sf::Vector2f(600, 2));
+    line.setFillColor(sf::Color::Black);
+
+    for (int i = 0; i <= 10; ++i) {
+        line.setPosition(100, 100 + i * 40);
+        window.draw(line);
+    }
+
+    line.setSize(sf::Vector2f(2, 400));
+    for (int i = 0; i <= 10; ++i) {
+        line.setPosition(100 + i * 60, 100);
+        window.draw(line);
+    }
+
+    for (int x = 0; x < 10; x++) {
+        sf::Text text(to_string(x), font, 12);
+        text.setFillColor(sf::Color::Black);
+        text.setPosition(100 + x * 60 + 25, 80);
+        window.draw(text);
+    }
+    for (int y = 0; y < 10; y++) {
+        sf::Text text(to_string(y), font, 12);
+        text.setFillColor(sf::Color::Black);
+        text.setPosition(80, 100 + y * 40 + 15);
+        window.draw(text);
+    }
+}
+
+void Board::drawBugs(sf::RenderWindow& window, const sf::Font& font) const {
+    for (const auto& bug : bugs) {
+        if (!bug->isAlive()) continue;
+
+        Position pos = bug->getPosition();
+        float radius = 15.0f + (bug->getSize() / 5.0f);
+        sf::CircleShape shape(radius);
+
+        if (dynamic_cast<Crawler*>(bug.get())) {
+            shape.setFillColor(sf::Color::Red);
+        } else if (dynamic_cast<Hopper*>(bug.get())) {
+            shape.setFillColor(sf::Color::Blue);
+        } else if (dynamic_cast<CrissCross*>(bug.get())) {
+            shape.setFillColor(sf::Color::Green);
+        }
+
+        shape.setPosition(100 + pos.x * 60 - radius, 100 + pos.y * 40 - radius);
+        window.draw(shape);
+
+        sf::Text text(to_string(bug->getId()), font, 12);
+        text.setFillColor(sf::Color::White);
+        text.setPosition(100 + pos.x * 60 - 5, 100 + pos.y * 40 - 8);
+        window.draw(text);
+
+        sf::CircleShape directionIndicator(5);
+        directionIndicator.setFillColor(sf::Color::Yellow);
+        switch (bug->getDirection()) {
+            case Direction::North:
+                directionIndicator.setPosition(100 + pos.x * 60 - 2.5f, 100 + pos.y * 40 - 15);
+                break;
+            case Direction::East:
+                directionIndicator.setPosition(100 + pos.x * 60 + 10, 100 + pos.y * 40 - 2.5f);
+                break;
+            case Direction::South:
+                directionIndicator.setPosition(100 + pos.x * 60 - 2.5f, 100 + pos.y * 40 + 10);
+                break;
+            case Direction::West:
+                directionIndicator.setPosition(100 + pos.x * 60 - 15, 100 + pos.y * 40 - 2.5f);
+                break;
+            default:
+                break;
+        }
+        window.draw(directionIndicator);
+    }
 }

@@ -1,9 +1,27 @@
 #include "Board.h"
+#include <SFML/Graphics.hpp>
 #include <iostream>
 #include <fstream>
 #include <chrono>
 #include <thread>
 using namespace std;
+
+void runSFMLVisualization(Board& board) {
+    sf::RenderWindow window(sf::VideoMode({800, 600}), "Bug Board Game");
+
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.is<sf::Event::Closed>()) {
+                window.close();
+            }
+        }
+
+        window.clear(sf::Color::White);
+        board.draw(window);
+        window.display();
+    }
+}
 
 int main() {
     Board board;
@@ -11,18 +29,18 @@ int main() {
 
     do {
         cout << "\nBug Simulation Menu:\n"
-                << "1. Initialize Board\n"
-                << "2. Display All Bugs\n"
-                << "3. Find Bug\n"
-                << "4. Tap the Bug Board\n"
-                << "5. Display Life History of all Bugs\n"
-                << "6. Display all Cells listing their Bugs\n"
-                << "7. Run simulation \n"
-                << "8. Last Bug Standing\n"
-                << "9. Exit \n"
-                << "Enter choice: ";
+             << "1. Initialize Board\n"
+             << "2. Display All Bugs\n"
+             << "3. Find Bug\n"
+             << "4. Tap the Bug Board\n"
+             << "5. Display Life History of all Bugs\n"
+             << "6. Display all Cells listing their Bugs\n"
+             << "7. Run simulation\n"
+             << "8. Last Bug Standing\n"
+             << "9. Visualize Board (SFML)\n"
+             << "10. Exit\n"
+             << "Enter choice: ";
         cin >> choice;
-
         switch (choice) {
             case 1:
                 board.initializeBoard("crawler-bugs.txt");

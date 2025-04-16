@@ -1,17 +1,14 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include "Bug.h"
-#include "Hopper.h"
-#include "CrissCross.h"
-#include "Crawler.h"
 #include <vector>
 #include <memory>
-#include <string>
-#include <utility>  // For std::pair
 #include <map>
-#include <algorithm>
-#include <chrono>
+#include <SFML/Graphics.hpp>
+#include "Bug.h"
+#include "Crawler.h"
+#include "Hopper.h"
+#include "CrissCross.h"
 
 struct BugResult {
     int id;
@@ -21,11 +18,12 @@ struct BugResult {
 };
 
 class Board {
+private:
     std::vector<std::unique_ptr<Bug>> bugs;
     bool initialized = false;
 
-    std::string directionToString(Direction dir) const;
     void handleFights();
+    int countAliveBugs() const;
     std::string getBugType(Bug* bug) const;
 
 public:
@@ -37,14 +35,13 @@ public:
     void displayAllCells() const;
     void runSimulation(int taps);
     void writeLifeHistoryToFile(const std::string& filename) const;
-
+    std::pair<int, std::vector<BugResult>> runBattleRoyale();
     bool isInitialized() const { return initialized; }
-    int countAliveBugs() const;
-    std::pair<int, std::vector<BugResult>> runBattleRoyale(); //  https://youtu.be/XO3etcSj_Po?si=qSo32kRUBD35HZPi
 
-    Board() = default;
-    Board(const Board&) = delete;
-    Board& operator=(const Board&) = delete;
+    // SFML Visualization methods
+    void draw(sf::RenderWindow& window) const;
+    void drawGrid(sf::RenderWindow& window) const;
+    void drawBugs(sf::RenderWindow& window) const;
 };
 
-#endif
+#endif // BOARD_H
