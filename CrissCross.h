@@ -6,14 +6,14 @@
 #define CRISSCROSS_H
 #include "Bug.h"
 
-//Moves in a zig zag formation
+
 
 class CrissCross : public Bug {
 private:
     enum class Phase { Primary, Secondary };
     Phase currentPhase;
-    Direction primaryDirection; //alternates between 2 diagonal direction (could be like SouthWest that alternates with NorthEast)
-    Direction secondaryDirection; // second direction to be alternated with (above could be NE while this one is SW and they alternate)
+    Direction primaryDirection;
+    Direction secondaryDirection;
 
     void reverseDirection();
     bool isDiagonalWayBlocked() const;

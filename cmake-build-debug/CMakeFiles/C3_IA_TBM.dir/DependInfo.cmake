@@ -8,11 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/tsits/OneDrive - Dundalk Institute of Technology/Desktop/C++/C3_IA_TBM/Board.cpp" "CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj" "gcc" "CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj.d"
-  "C:/Users/tsits/OneDrive - Dundalk Institute of Technology/Desktop/C++/C3_IA_TBM/Crawler.cpp" "CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj" "gcc" "CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj.d"
-  "C:/Users/tsits/OneDrive - Dundalk Institute of Technology/Desktop/C++/C3_IA_TBM/CrissCross.cpp" "CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj" "gcc" "CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj.d"
-  "C:/Users/tsits/OneDrive - Dundalk Institute of Technology/Desktop/C++/C3_IA_TBM/Hopper.cpp" "CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj" "gcc" "CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj.d"
-  "C:/Users/tsits/OneDrive - Dundalk Institute of Technology/Desktop/C++/C3_IA_TBM/main.cpp" "CMakeFiles/C3_IA_TBM.dir/main.cpp.obj" "gcc" "CMakeFiles/C3_IA_TBM.dir/main.cpp.obj.d"
+  "C:/Users/Tahar/CLionProjects/C3_IA_TBM/Board.cpp" "CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj" "gcc" "CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj.d"
+  "C:/Users/Tahar/CLionProjects/C3_IA_TBM/Crawler.cpp" "CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj" "gcc" "CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj.d"
+  "C:/Users/Tahar/CLionProjects/C3_IA_TBM/CrissCross.cpp" "CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj" "gcc" "CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj.d"
+  "C:/Users/Tahar/CLionProjects/C3_IA_TBM/Hopper.cpp" "CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj" "gcc" "CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj.d"
+  "C:/Users/Tahar/CLionProjects/C3_IA_TBM/SFML.cpp" "CMakeFiles/C3_IA_TBM.dir/SFML.cpp.obj" "gcc" "CMakeFiles/C3_IA_TBM.dir/SFML.cpp.obj.d"
+  "C:/Users/Tahar/CLionProjects/C3_IA_TBM/main.cpp" "CMakeFiles/C3_IA_TBM.dir/main.cpp.obj" "gcc" "CMakeFiles/C3_IA_TBM.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

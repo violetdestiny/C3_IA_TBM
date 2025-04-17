@@ -30,7 +30,7 @@ public:
 
     virtual ~Bug() = default;
 
-    // virtual function that makes this class abstract
+
     virtual void move() = 0;
 
     bool isWayBlocked() const {
@@ -45,10 +45,10 @@ public:
 
     void setPosition(const Position& pos) {
         position = pos;
-        path.push_back(position); // Automatically record new positions
+        path.push_back(position);
     }
 
-    //Still thinking. for random direction
+
     Direction getRandomDirection() {
         static const std::array<Direction, 4> directions = {
             Direction::North, Direction::East, Direction::South, Direction::West

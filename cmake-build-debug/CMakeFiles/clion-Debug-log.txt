@@ -1,4 +1,14 @@
-"C:\Program Files\JetBrains\CLion 2024.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S "C:\Users\tsits\OneDrive - Dundalk Institute of Technology\Desktop\C++\C3_IA_TBM" -B "C:\Users\tsits\OneDrive - Dundalk Institute of Technology\Desktop\C++\C3_IA_TBM\cmake-build-debug"
--- Configuring done (0.3s)
--- Generating done (0.1s)
--- Build files have been written to: C:/Users/tsits/OneDrive - Dundalk Institute of Technology/Desktop/C++/C3_IA_TBM/cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2025.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S C:\Users\Tahar\CLionProjects\C3_IA_TBM -B C:\Users\Tahar\CLionProjects\C3_IA_TBM\cmake-build-debug
+-- Found SFML 2.6.2 in C:/SFML/SFML-2.6.2/lib/cmake/SFML
+-- Configuring done (0.2s)
+CMake Error at CMakeLists.txt:7 (add_executable):
+  Cannot find source file:
+
+    Bug.cpp
+
+
+CMake Error at CMakeLists.txt:7 (add_executable):
+  No SOURCES given to target: C3_IA_TBM
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
