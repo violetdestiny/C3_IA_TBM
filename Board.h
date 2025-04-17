@@ -1,18 +1,11 @@
-#ifndef BOARD_H
-#define BOARD_H
-
-#include "Bug.h"
-#include "Hopper.h"
-#include "CrissCross.h"
-#include "Crawler.h"
+#pragma once
 #include <vector>
 #include <memory>
 #include <string>
-#include <utility>  // For std::pair
 #include <map>
-#include <algorithm>
-#include <chrono>
-
+#include "Bug.h"
+#include "Position.h"
+#include "SuperBug.h"
 struct BugResult {
     int id;
     std::string type;
@@ -21,12 +14,10 @@ struct BugResult {
 };
 
 class Board {
+private:
     std::vector<std::unique_ptr<Bug>> bugs;
     bool initialized = false;
-
-    std::string directionToString(Direction dir) const;
     void handleFights();
-    std::string getBugType(Bug* bug) const;
 
 public:
     void initializeBoard(const std::string& filename);
@@ -37,14 +28,16 @@ public:
     void displayAllCells() const;
     void runSimulation(int taps);
     void writeLifeHistoryToFile(const std::string& filename) const;
-
+    std::pair<int, std::vector<BugResult>> runBattleRoyale();
     bool isInitialized() const { return initialized; }
     int countAliveBugs() const;
-    std::pair<int, std::vector<BugResult>> runBattleRoyale(); //  https://youtu.be/XO3etcSj_Po?si=qSo32kRUBD35HZPi
+    std::string getBugType(Bug* bug) const;
+    const std::vector<std::unique_ptr<Bug>>& getBugs() const { return bugs; }
+    std::string directionToString(Direction dir) const;
 
-    Board() = default;
-    Board(const Board&) = delete;
-    Board& operator=(const Board&) = delete;
+    void addSuperBug();
+    void handleSuperBugFights();
+    SuperBug* getSuperBug() const;
+
+
 };
-
-#endif
