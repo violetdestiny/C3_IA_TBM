@@ -26,6 +26,12 @@ void Hopper::move() {
         case Direction::West:
             position.x = (position.x - hopLength < 0) ? 0 : position.x - hopLength;
         break;
+        case Direction::NorthEast:
+        case Direction::SouthEast:
+        case Direction::SouthWest:
+        case Direction::NorthWest:
+            // Handle these cases or add a default case
+            break;
     }
 
     path.push_back(position);

@@ -1,9 +1,71 @@
 #include "Board.h"
+#include <SFML/Graphics.hpp>
 #include <iostream>
 #include <fstream>
 #include <chrono>
 #include <thread>
+#include "Crawler.h"
+#include "Hopper.h"
+#include "CrissCross.h"
+#include <memory>
+
 using namespace std;
+
+void runSFMLVisualization(Board& board) {
+    sf::RenderWindow window(sf::VideoMode({800, 600}), "Bug Simulation");
+
+    while (window.isOpen()) {
+
+        if (auto event = window.pollEvent()) {
+            if (event->is<sf::Event::Closed>()) {
+                window.close();
+            }
+        }
+
+        window.clear(sf::Color::White);
+
+        // Draw grid
+        for (int x = 0; x <= 800; x += 60) {
+            sf::Vertex line[] = {
+                sf::Vertex(sf::Vector2f(static_cast<float>(x), 0.f)),
+                sf::Vertex(sf::Vector2f(static_cast<float>(x), 600.f))
+            };
+            window.draw(line, 2, sf::PrimitiveType::Lines);
+        }
+
+        for (int y = 0; y <= 600; y += 60) {
+            sf::Vertex line[] = {
+                sf::Vertex(sf::Vector2f(0.f, static_cast<float>(y))),
+                sf::Vertex(sf::Vector2f(800.f, static_cast<float>(y)))
+            };
+            window.draw(line, 2, sf::PrimitiveType::Lines);
+        }
+
+        // Draw bugs
+        for (const auto& bug : board.getBugs()) {
+            if (bug->isAlive()) {
+                Position pos = bug->getPosition();
+                sf::CircleShape bugShape(15.f);
+
+                if (dynamic_cast<Crawler*>(bug.get())) {
+                    bugShape.setFillColor(sf::Color::Red);
+                } else if (dynamic_cast<Hopper*>(bug.get())) {
+                    bugShape.setFillColor(sf::Color::Green);
+                } else if (dynamic_cast<CrissCross*>(bug.get())) {
+                    bugShape.setFillColor(sf::Color::Blue);
+                }
+
+                bugShape.setPosition({
+                    static_cast<float>(pos.x * 60 + 30),
+                    static_cast<float>(pos.y * 60 + 30)
+                });
+                window.draw(bugShape);
+            }
+        }
+
+        window.display();
+    }
+}
 
 int main() {
     Board board;
@@ -11,17 +73,23 @@ int main() {
 
     do {
         cout << "\nBug Simulation Menu:\n"
-                << "1. Initialize Board\n"
-                << "2. Display All Bugs\n"
-                << "3. Find Bug\n"
-                << "4. Tap the Bug Board\n"
-                << "5. Display Life History of all Bugs\n"
-                << "6. Display all Cells listing their Bugs\n"
-                << "7. Run simulation \n"
-                << "8. Last Bug Standing\n"
-                << "9. Exit \n"
-                << "Enter choice: ";
-        cin >> choice;
+             << "1. Initialize Board\n"
+             << "2. Display All Bugs\n"
+             << "3. Find Bug\n"
+             << "4. Tap the Bug Board\n"
+             << "5. Display Life History of all Bugs\n"
+             << "6. Display all Cells listing their Bugs\n"
+             << "7. Run simulation (SFML)\n"
+             << "8. Last Bug Standing\n"
+             << "9. Exit \n"
+             << "Enter choice: ";
+
+        if (!(cin >> choice)) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input! Please enter a number.\n";
+            continue;
+        }
 
         switch (choice) {
             case 1:
@@ -38,7 +106,12 @@ int main() {
                 }
                 int id;
                 cout << "Enter bug ID: ";
-                cin >> id;
+                if (!(cin >> id)) {
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    cout << "Invalid ID!\n";
+                    break;
+                }
                 board.findBug(id);
                 break;
             }
@@ -65,16 +138,7 @@ int main() {
                     cout << "Error: Initialize board first!\n";
                     break;
                 }
-                int taps;
-                cout << "Enter number of taps: ";
-                cin >> taps;
-                cout << "Tapping....\n";
-
-                board.runSimulation(taps);
-                if (taps == 1) {
-                    cout << "Board taped once!\n";
-                } else
-                    cout << "Board taped " << taps << " times\n";
+                runSFMLVisualization(board);
                 break;
             }
             case 8: {
@@ -88,7 +152,7 @@ int main() {
                 cout << "\n=== BATTLE RESULTS ===\n";
                 cout << "Taps: " << taps << "\n";
 
-                if (winners.size() > 0) {
+                if (!winners.empty()) {
                     cout << "1st: Bug " << winners[0].id << " (" << winners[0].type
                          << ") Size: " << winners[0].size << " Kills: " << winners[0].kills << "\n";
                 }
@@ -101,7 +165,7 @@ int main() {
                          << ") Size: " << winners[2].size << " Kills: " << winners[2].kills << "\n";
                 }
 
-                if (winners.size() > 0 && winners[0].kills == 0) {
+                if (!winners.empty() && winners[0].kills == 0) {
                     cout << "Note: Battle ended by time limit\n";
                 }
                 break;
@@ -112,7 +176,6 @@ int main() {
                 }
                 cout << "Exiting...\n";
                 break;
-
             default:
                 cout << "Invalid choice!\n";
         }
