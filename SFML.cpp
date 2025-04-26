@@ -184,8 +184,7 @@ void runSFMLVisualization(Board& board) {
             if (superBugExists) {
                 Text stats;
                 stats.setFont(font);
-                stats.setString("SuperBug - Kills: " + to_string(superBug->getKills()) +
-                              " | Size: " + to_string(superBug->getSize()));
+                stats.setString("SuperBug - Kills: " + to_string(superBug->getKills()) );
                 stats.setCharacterSize(16);
                 stats.setFillColor(Color::Black);
                 stats.setPosition(10.f, static_cast<float>(windowHeight - 50));
