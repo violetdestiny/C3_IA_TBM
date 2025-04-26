@@ -248,6 +248,30 @@ SFML.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/SFML.cpp.s
 .PHONY : SFML.cpp.s
 
+SuperBug.obj: SuperBug.cpp.obj
+.PHONY : SuperBug.obj
+
+# target to build an object file
+SuperBug.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.obj
+.PHONY : SuperBug.cpp.obj
+
+SuperBug.i: SuperBug.cpp.i
+.PHONY : SuperBug.i
+
+# target to preprocess a source file
+SuperBug.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.i
+.PHONY : SuperBug.cpp.i
+
+SuperBug.s: SuperBug.cpp.s
+.PHONY : SuperBug.s
+
+# target to generate assembly for a file
+SuperBug.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C3_IA_TBM.dir\build.make CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.s
+.PHONY : SuperBug.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -296,6 +320,9 @@ help:
 	@echo ... SFML.obj
 	@echo ... SFML.i
 	@echo ... SFML.s
+	@echo ... SuperBug.obj
+	@echo ... SuperBug.i
+	@echo ... SuperBug.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

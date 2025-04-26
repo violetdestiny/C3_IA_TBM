@@ -12,6 +12,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj.d"
   "CMakeFiles/C3_IA_TBM.dir/SFML.cpp.obj"
   "CMakeFiles/C3_IA_TBM.dir/SFML.cpp.obj.d"
+  "CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.obj"
+  "CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.obj.d"
   "CMakeFiles/C3_IA_TBM.dir/main.cpp.obj"
   "CMakeFiles/C3_IA_TBM.dir/main.cpp.obj.d"
   "libC3_IA_TBM.dll.a"

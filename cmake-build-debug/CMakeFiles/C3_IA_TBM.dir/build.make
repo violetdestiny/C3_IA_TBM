@@ -101,26 +101,11 @@ CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tahar\CLionProjects\C3_IA_TBM\Crawler.cpp -o CMakeFiles\C3_IA_TBM.dir\Crawler.cpp.s
 
-CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj: CMakeFiles/C3_IA_TBM.dir/flags.make
-CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj: CMakeFiles/C3_IA_TBM.dir/includes_CXX.rsp
-CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj: C:/Users/Tahar/CLionProjects/C3_IA_TBM/Board.cpp
-CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj: CMakeFiles/C3_IA_TBM.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Tahar\CLionProjects\C3_IA_TBM\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj -MF CMakeFiles\C3_IA_TBM.dir\Board.cpp.obj.d -o CMakeFiles\C3_IA_TBM.dir\Board.cpp.obj -c C:\Users\Tahar\CLionProjects\C3_IA_TBM\Board.cpp
-
-CMakeFiles/C3_IA_TBM.dir/Board.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/C3_IA_TBM.dir/Board.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tahar\CLionProjects\C3_IA_TBM\Board.cpp > CMakeFiles\C3_IA_TBM.dir\Board.cpp.i
-
-CMakeFiles/C3_IA_TBM.dir/Board.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/C3_IA_TBM.dir/Board.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tahar\CLionProjects\C3_IA_TBM\Board.cpp -o CMakeFiles\C3_IA_TBM.dir\Board.cpp.s
-
 CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj: CMakeFiles/C3_IA_TBM.dir/flags.make
 CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj: CMakeFiles/C3_IA_TBM.dir/includes_CXX.rsp
 CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj: C:/Users/Tahar/CLionProjects/C3_IA_TBM/Hopper.cpp
 CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj: CMakeFiles/C3_IA_TBM.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Tahar\CLionProjects\C3_IA_TBM\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Tahar\CLionProjects\C3_IA_TBM\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj -MF CMakeFiles\C3_IA_TBM.dir\Hopper.cpp.obj.d -o CMakeFiles\C3_IA_TBM.dir\Hopper.cpp.obj -c C:\Users\Tahar\CLionProjects\C3_IA_TBM\Hopper.cpp
 
 CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.i: cmake_force
@@ -135,7 +120,7 @@ CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj: CMakeFiles/C3_IA_TBM.dir/flags.make
 CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj: CMakeFiles/C3_IA_TBM.dir/includes_CXX.rsp
 CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj: C:/Users/Tahar/CLionProjects/C3_IA_TBM/CrissCross.cpp
 CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj: CMakeFiles/C3_IA_TBM.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Tahar\CLionProjects\C3_IA_TBM\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Tahar\CLionProjects\C3_IA_TBM\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj -MF CMakeFiles\C3_IA_TBM.dir\CrissCross.cpp.obj.d -o CMakeFiles\C3_IA_TBM.dir\CrissCross.cpp.obj -c C:\Users\Tahar\CLionProjects\C3_IA_TBM\CrissCross.cpp
 
 CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.i: cmake_force
@@ -145,6 +130,21 @@ CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.i: cmake_force
 CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tahar\CLionProjects\C3_IA_TBM\CrissCross.cpp -o CMakeFiles\C3_IA_TBM.dir\CrissCross.cpp.s
+
+CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj: CMakeFiles/C3_IA_TBM.dir/flags.make
+CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj: CMakeFiles/C3_IA_TBM.dir/includes_CXX.rsp
+CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj: C:/Users/Tahar/CLionProjects/C3_IA_TBM/Board.cpp
+CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj: CMakeFiles/C3_IA_TBM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Tahar\CLionProjects\C3_IA_TBM\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj -MF CMakeFiles\C3_IA_TBM.dir\Board.cpp.obj.d -o CMakeFiles\C3_IA_TBM.dir\Board.cpp.obj -c C:\Users\Tahar\CLionProjects\C3_IA_TBM\Board.cpp
+
+CMakeFiles/C3_IA_TBM.dir/Board.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/C3_IA_TBM.dir/Board.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tahar\CLionProjects\C3_IA_TBM\Board.cpp > CMakeFiles\C3_IA_TBM.dir\Board.cpp.i
+
+CMakeFiles/C3_IA_TBM.dir/Board.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/C3_IA_TBM.dir/Board.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tahar\CLionProjects\C3_IA_TBM\Board.cpp -o CMakeFiles\C3_IA_TBM.dir\Board.cpp.s
 
 CMakeFiles/C3_IA_TBM.dir/SFML.cpp.obj: CMakeFiles/C3_IA_TBM.dir/flags.make
 CMakeFiles/C3_IA_TBM.dir/SFML.cpp.obj: CMakeFiles/C3_IA_TBM.dir/includes_CXX.rsp
@@ -161,24 +161,41 @@ CMakeFiles/C3_IA_TBM.dir/SFML.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/C3_IA_TBM.dir/SFML.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tahar\CLionProjects\C3_IA_TBM\SFML.cpp -o CMakeFiles\C3_IA_TBM.dir\SFML.cpp.s
 
+CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.obj: CMakeFiles/C3_IA_TBM.dir/flags.make
+CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.obj: CMakeFiles/C3_IA_TBM.dir/includes_CXX.rsp
+CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.obj: C:/Users/Tahar/CLionProjects/C3_IA_TBM/SuperBug.cpp
+CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.obj: CMakeFiles/C3_IA_TBM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Tahar\CLionProjects\C3_IA_TBM\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.obj -MF CMakeFiles\C3_IA_TBM.dir\SuperBug.cpp.obj.d -o CMakeFiles\C3_IA_TBM.dir\SuperBug.cpp.obj -c C:\Users\Tahar\CLionProjects\C3_IA_TBM\SuperBug.cpp
+
+CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tahar\CLionProjects\C3_IA_TBM\SuperBug.cpp > CMakeFiles\C3_IA_TBM.dir\SuperBug.cpp.i
+
+CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tahar\CLionProjects\C3_IA_TBM\SuperBug.cpp -o CMakeFiles\C3_IA_TBM.dir\SuperBug.cpp.s
+
 # Object files for target C3_IA_TBM
 C3_IA_TBM_OBJECTS = \
 "CMakeFiles/C3_IA_TBM.dir/main.cpp.obj" \
 "CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj" \
-"CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj" \
 "CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj" \
 "CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj" \
-"CMakeFiles/C3_IA_TBM.dir/SFML.cpp.obj"
+"CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj" \
+"CMakeFiles/C3_IA_TBM.dir/SFML.cpp.obj" \
+"CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.obj"
 
 # External object files for target C3_IA_TBM
 C3_IA_TBM_EXTERNAL_OBJECTS =
 
 C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/main.cpp.obj
 C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/Crawler.cpp.obj
-C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj
 C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/Hopper.cpp.obj
 C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/CrissCross.cpp.obj
+C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/Board.cpp.obj
 C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/SFML.cpp.obj
+C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.obj
 C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/build.make
 C3_IA_TBM.exe: C:/SFML/SFML-2.6.2/lib/libsfml-graphics-d.a
 C3_IA_TBM.exe: C:/SFML/SFML-2.6.2/lib/libsfml-window-d.a
@@ -186,7 +203,7 @@ C3_IA_TBM.exe: C:/SFML/SFML-2.6.2/lib/libsfml-system-d.a
 C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/linkLibs.rsp
 C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/objects1.rsp
 C3_IA_TBM.exe: CMakeFiles/C3_IA_TBM.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Tahar\CLionProjects\C3_IA_TBM\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable C3_IA_TBM.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Tahar\CLionProjects\C3_IA_TBM\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable C3_IA_TBM.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\C3_IA_TBM.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

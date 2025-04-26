@@ -48,7 +48,6 @@ public:
         path.push_back(position);
     }
 
-
     Direction getRandomDirection() {
         static const std::array<Direction, 4> directions = {
             Direction::North, Direction::East, Direction::South, Direction::West

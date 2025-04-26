@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 20)
 # Executable with all source files
 add_executable(C3_IA_TBM
         main.cpp
-        Bug.h Bug.cpp
+        Bug.h
         Crawler.cpp Crawler.h
         Hopper.cpp Hopper.h
         CrissCross.cpp CrissCross.h

@@ -358,57 +358,40 @@ string Board::getBugType(Bug* bug) const {
 }
 
 
-void Board::handleFights() const {
-    std::map<std::pair<int, int>, std::vector<Bug*>> cellMap;
+// for super bug
 
-    for (auto& bug : bugs) {
-        if (bug->isAlive()) {
-            Position pos = bug->getPosition();
-            cellMap[{pos.x, pos.y}].push_back(bug.get());
+
+void Board::addSuperBug() {
+    bugs.emplace_back(make_unique<SuperBug>(999, 0, 0, Direction::East, 30));
+}
+
+void Board::handleSuperBugFights() {
+    if (!bugs.empty() && dynamic_cast<SuperBug*>(bugs.back().get())) {
+        Position superPos = bugs.back()->getPosition();
+        vector<Bug*> bugsInCell;
+
+        for (auto& bug : bugs) {
+            if (bug->isAlive() && bug.get() != bugs.back().get() &&
+                bug->getPosition().x == superPos.x &&
+                bug->getPosition().y == superPos.y) {
+                bugsInCell.push_back(bug.get());
+                }
+        }
+
+        for (auto bug : bugsInCell) {
+            bug->setAlive(false);
+            bug->setKilledBy(999);
+            dynamic_cast<SuperBug*>(bugs.back().get())->addKill();
+            bugs.back()->setSize(bugs.back()->getSize() + bug->getSize());
         }
     }
+}
 
-    for (auto& [pos, bugsInCell] : cellMap) {
-        if (bugsInCell.size() > 1) {
-            std::vector<Bug*> aliveBugs;
-            for (auto bug : bugsInCell) {
-                if (bug->isAlive()) {
-                    aliveBugs.push_back(bug);
-                }
-            }
-
-            if (aliveBugs.size() > 1) {
-                int max_size = aliveBugs[0]->getSize();
-                std::vector<Bug*> max_bugs;
-                max_bugs.push_back(aliveBugs[0]);
-
-                for (size_t i = 1; i < aliveBugs.size(); ++i) {
-                    if (aliveBugs[i]->getSize() > max_size) {
-                        max_size = aliveBugs[i]->getSize();
-                        max_bugs.clear();
-                        max_bugs.push_back(aliveBugs[i]);
-                    } else if (aliveBugs[i]->getSize() == max_size) {
-                        max_bugs.push_back(aliveBugs[i]);
-                    }
-                }
-
-                Bug* winner;
-                if (max_bugs.size() == 1) {
-                    winner = max_bugs[0];
-                } else {
-                    // Randomly select a winner if there are multiple bugs of the same size
-                    std::srand(static_cast<unsigned int>(std::time(nullptr)));
-                    winner = max_bugs[rand() % max_bugs.size()];
-                }
-
-                for (auto bug : aliveBugs) {
-                    if (bug != winner) {
-                        winner->setSize(winner->getSize() + bug->getSize());
-                        bug->setAlive(false);
-                        bug->setKilledBy(winner->getId());
-                    }
-                }
-            }
+SuperBug* Board::getSuperBug() const {
+    for (const auto& bug : bugs) {
+        if (dynamic_cast<SuperBug*>(bug.get())) {
+            return dynamic_cast<SuperBug*>(bug.get());
         }
     }
+    return nullptr;
 }

@@ -4,8 +4,8 @@
 #include "SuperBug.h"
 #include <iostream>
 
-SuperBug::SuperBug(int id, int x, int y)
-    : Bug(id, x, y, Direction::North, SUPER_SIZE) {
+SuperBug::SuperBug(int id, int x, int y, Direction dir, int size)
+    : Bug(id, x, y, dir, size) {
     shape.setRadius(20.f);
     shape.setFillColor(sf::Color::Magenta);
     shape.setOutlineThickness(2.f);
@@ -32,7 +32,9 @@ void SuperBug::move(Direction dir) {
         path.push_back(position);
     }
 }
-
+void SuperBug::move() {
+    move(direction);
+}
 void SuperBug::draw(sf::RenderWindow& window) {
     if (!alive) return;
     shape.setPosition(position.x * 60.f + 30.f, position.y * 60.f + 30.f);

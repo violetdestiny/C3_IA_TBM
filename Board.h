@@ -34,6 +34,10 @@ public:
     std::string getBugType(Bug* bug) const;
     const std::vector<std::unique_ptr<Bug>>& getBugs() const { return bugs; }
     std::string directionToString(Direction dir) const;
-    void handleFights() const;
-    std::unique_ptr<SuperBug> superBug;
+
+    void addSuperBug();
+    void handleSuperBugFights();
+    SuperBug* getSuperBug() const;
+
+
 };
