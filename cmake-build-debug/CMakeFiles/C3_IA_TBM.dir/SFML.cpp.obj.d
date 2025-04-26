@@ -299,4 +299,6 @@ CMakeFiles/C3_IA_TBM.dir/SFML.cpp.obj: \
  C:\Users\Tahar\CLionProjects\C3_IA_TBM\SuperBug.h \
  C:\Users\Tahar\CLionProjects\C3_IA_TBM\Hopper.h \
  C:\Users\Tahar\CLionProjects\C3_IA_TBM\CrissCross.h \
- C:\Users\Tahar\CLionProjects\C3_IA_TBM\SFML.h
+ C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
+ C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
+ C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc

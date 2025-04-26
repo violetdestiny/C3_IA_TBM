@@ -764,6 +764,7 @@ CMakeFiles/C3_IA_TBM.dir/SFML.cpp.obj: C:/Users/Tahar/CLionProjects/C3_IA_TBM/SF
   C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hash_bytes.h \
   C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/invoke.h \
   C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ios_base.h \
+  C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
   C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/iterator_concepts.h \
   C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/list.tcc \
   C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_classes.h \
@@ -858,6 +859,8 @@ CMakeFiles/C3_IA_TBM.dir/SFML.cpp.obj: C:/Users/Tahar/CLionProjects/C3_IA_TBM/SF
   C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list \
   C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
   C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iosfwd \
+  C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
+  C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
   C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator \
   C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits \
   C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/list \
@@ -1026,7 +1029,6 @@ CMakeFiles/C3_IA_TBM.dir/SFML.cpp.obj: C:/Users/Tahar/CLionProjects/C3_IA_TBM/SF
   C:/Users/Tahar/CLionProjects/C3_IA_TBM/Direction.h \
   C:/Users/Tahar/CLionProjects/C3_IA_TBM/Hopper.h \
   C:/Users/Tahar/CLionProjects/C3_IA_TBM/Position.h \
-  C:/Users/Tahar/CLionProjects/C3_IA_TBM/SFML.h \
   C:/Users/Tahar/CLionProjects/C3_IA_TBM/SuperBug.h
 
 CMakeFiles/C3_IA_TBM.dir/SuperBug.cpp.obj: C:/Users/Tahar/CLionProjects/C3_IA_TBM/SuperBug.cpp \
@@ -2270,6 +2272,6 @@ C:/Users/Tahar/CLionProjects/C3_IA_TBM/Position.h:
 
 C:/Users/Tahar/CLionProjects/C3_IA_TBM/SuperBug.h:
 
-C:/Users/Tahar/CLionProjects/C3_IA_TBM/SFML.h:
-
 C:/Users/Tahar/CLionProjects/C3_IA_TBM/SuperBug.cpp:
+
+C:/Users/Tahar/CLionProjects/C3_IA_TBM/SFML.h:
