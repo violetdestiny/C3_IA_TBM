@@ -83,6 +83,7 @@ int main() {
                     cout << "Error: Initialize board first!\n";
                     break;
                 }
+                board.addSuperBug();
                 runSFMLVisualization(board);
                 break;
             }
