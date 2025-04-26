@@ -5,7 +5,7 @@
 #include <iostream>
 
 SuperBug::SuperBug(int id, int x, int y, Direction dir, int size)
-    : Bug(id, x, y, dir, size) {
+    : Bug(id, x, y, dir, size), kills(0) {
     shape.setRadius(20.f);
     shape.setFillColor(sf::Color::Magenta);
     shape.setOutlineThickness(2.f);
@@ -26,15 +26,16 @@ void SuperBug::move(Direction dir) {
         default: break;
     }
 
-
     if (newPos.x >= 0 && newPos.x < 10 && newPos.y >= 0 && newPos.y < 10) {
         position = newPos;
         path.push_back(position);
     }
 }
+
 void SuperBug::move() {
     move(direction);
 }
+
 void SuperBug::draw(sf::RenderWindow& window) {
     if (!alive) return;
     shape.setPosition(position.x * 60.f + 30.f, position.y * 60.f + 30.f);
@@ -45,10 +46,22 @@ void SuperBug::handleInput(const sf::Event& event) {
     if (event.type == sf::Event::KeyPressed) {
         switch(event.key.code) {
             case sf::Keyboard::Up:    move(Direction::North); break;
-            case sf::Keyboard::Right:  move(Direction::East);  break;
-            case sf::Keyboard::Down:   move(Direction::South); break;
-            case sf::Keyboard::Left:   move(Direction::West);  break;
+            case sf::Keyboard::Right: move(Direction::East);  break;
+            case sf::Keyboard::Down:  move(Direction::South); break;
+            case sf::Keyboard::Left:  move(Direction::West);  break;
             default: break;
         }
     }
+}
+
+void SuperBug::addKill() {
+    kills++;
+}
+
+int SuperBug::getKills() const {
+    return kills;
+}
+
+std::string SuperBug::getType() const {
+    return "SuperBug";
 }
