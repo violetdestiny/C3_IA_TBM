@@ -52,8 +52,10 @@ void runSFMLVisualization(Board& board) {
 
     Font font;
     if (!font.loadFromFile(resourcePath + "arial.ttf")) {
-        cout << "Failed to load font\n";
+        cout << "Font not foud\n";
     }
+
+    Color amethystPurple(153, 102, 204);
 
     while (window.isOpen()) {
         while (window.pollEvent(event)) {
@@ -100,24 +102,27 @@ void runSFMLVisualization(Board& board) {
 
         window.clear(Color::White);
 
-        RectangleShape gridBackground(Vector2f(windowWidth, windowHeight - 100));
-        gridBackground.setFillColor(Color::White);
-        gridBackground.setPosition(0, 0);
-        window.draw(gridBackground);
+        for (int y = 0; y < gridSize; y++) {
+            for (int x = 0; x < gridSize; x++) {
+                RectangleShape tile(Vector2f(tileSize, tileSize));
+                tile.setPosition(x * tileSize, y * tileSize);
+                tile.setFillColor((x + y) % 2 == 0 ? Color::White : amethystPurple);
+                window.draw(tile);
+            }
+        }
 
-        Color purple(128, 0, 128);
         for (int x = 0; x <= windowWidth; x += tileSize) {
             Vertex line[] = {
-                Vertex(Vector2f(static_cast<float>(x), 0.f), purple),
-                Vertex(Vector2f(static_cast<float>(x), static_cast<float>(windowHeight - 100)), purple)
+                Vertex(Vector2f(static_cast<float>(x), 0.f), Color::Black),
+                Vertex(Vector2f(static_cast<float>(x), static_cast<float>(windowHeight - 100)), Color::Black)
             };
             window.draw(line, 2, Lines);
         }
 
         for (int y = 0; y <= windowHeight - 100; y += tileSize) {
             Vertex line[] = {
-                Vertex(Vector2f(0.f, static_cast<float>(y)), purple),
-                Vertex(Vector2f(static_cast<float>(windowWidth), static_cast<float>(y)), purple)
+                Vertex(Vector2f(0.f, static_cast<float>(y)), Color::Black),
+                Vertex(Vector2f(static_cast<float>(windowWidth), static_cast<float>(y)), Color::Black)
             };
             window.draw(line, 2, Lines);
         }
@@ -173,7 +178,7 @@ void runSFMLVisualization(Board& board) {
             instructions.setFillColor(Color::Black);
 
             if (superBugExists) {
-                instructions.setString("Arrow Keys: Move SuperBug | Space: Kill | T: Tap board");
+                instructions.setString("  Arrow Keys: Move SuperBug  Space: Kill  T: Tap board");
             } else {
                 instructions.setString("No SuperBug ;(");
             }

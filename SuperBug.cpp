@@ -57,11 +57,10 @@ void SuperBug::handleInput(const sf::Event& event) {
 void SuperBug::addKill() {
     kills++;
 }
-
+std::string SuperBug::getType() const {
+    return "SuperBug";
+}
 int SuperBug::getKills() const {
     return kills;
 }
 
-std::string SuperBug::getType() const {
-    return "SuperBug";
-}
